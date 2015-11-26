@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+import java.io.*;
 public class SCHOOL
 {
    // array of PUPIL objects

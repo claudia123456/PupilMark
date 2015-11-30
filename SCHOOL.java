@@ -6,22 +6,31 @@ public class SCHOOL
    private PUPIL pupilList[];
    // number of pupils to be called 
    int noOfPupils;
+   FILEREADCSV PupilMark;
+   
    public SCHOOL()
    {
-
+     PupilMark = new FILEREADCSV();
+     
    }
 
    // top level algorithm
-   public void processPupils()
+   public void processPupils() throws IOException
    {
       setupPupilList();
       countPupilMark();
      
    }
    
-    private void setupPupilList()
+    private void setupPupilList() throws IOException
     { // placeholder 
+        System.out.println("School : PupilMark update");
+        System.out.println("** Preparing to read data file.");
+        String [] dataRows = PupilMark.readCSVtable ();
+        noOfPupils = dataRows.length -1;
+        System.out.println("** " + noOfPupils + "rows read .\n\n");
     }
+    
     public void countPupilMark()
     {
         //placeholder

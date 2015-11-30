@@ -3,14 +3,14 @@ public class PUPIL
     // list of properties
     private String fName;
     private String sName;
-    private Float PupilMark;
+    private int PupilMark;
     public PUPIL ()
     {
         //constructor
 
         fName = "";
         sName = "";
-        PupilMark = 0.0f;
+        PupilMark = 0;
 
     }      
     //file handling store details from fie
@@ -20,7 +20,7 @@ public class PUPIL
         // store each data items as instance property
         fName = rowItems [0];
         sName = rowItems [1];
-        PupilMark = Float.parseFloat(rowItems[2]);
+        PupilMark = Integer.parseInt(rowItems[2]);
     }  
 
     public String writeDetails ()
@@ -32,7 +32,7 @@ public class PUPIL
         pupilData = pupilData.concat(",");
         pupilData = pupilData.concat(sName);
         pupilData = pupilData.concat(",");
-        pupilData = pupilData.concat(Float.toString(PupilMark));
+        pupilData = pupilData.concat(Integer.toString(PupilMark));
         return pupilData;
     }
     

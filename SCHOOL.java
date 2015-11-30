@@ -29,7 +29,13 @@ public class SCHOOL
         String [] dataRows = PupilMark.readCSVtable ();
         noOfPupils = dataRows.length -1;
         System.out.println("** " + noOfPupils + "rows read .\n\n");
+        pupilList = new PUPIL [noOfPupils];
+        
+        for (int i = 0; i < noOfPupils; i++) {
+      pupilList[i] = new PUPIL ();
+      pupilList[i].readPupilDetails(dataRows[i+1]);
     }
+}
     
     public void countPupilMark()
     {

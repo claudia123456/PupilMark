@@ -42,7 +42,7 @@ public class SCHOOL
         //placeholder
         for (int i = 0; i < noOfPupils; i++)
         {
-            if ((PupilList[i].getPupilMark() < PupilList [maxDataPosition].getdata )) {
+            if ((pupilList [i].getPupilMark() < PupilList [maxDataPosition].getdata )) {
                 MaxDataPosition = 1;
             }
         }

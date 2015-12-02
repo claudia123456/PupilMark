@@ -36,5 +36,11 @@ public class PUPIL
         pupilData = pupilData.concat(Integer.toString(PupilMark));
         return pupilData;
     }
-    
-}    
+
+    public int getPupilMark ()
+    {
+        return topmark;
+    }    
+    public void displayDetails ()
+    {
+        

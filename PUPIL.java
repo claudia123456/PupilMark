@@ -4,6 +4,7 @@ public class PUPIL
     private String fName;
     private String sName;
     private int PupilMark;
+    private int topmark;
     public PUPIL ()
     {
         //constructor

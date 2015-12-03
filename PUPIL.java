@@ -5,6 +5,8 @@ public class PUPIL
     private String sName;
     private int PupilMark;
     private int topmark;
+    private int maxDataPosition;
+
     public PUPIL ()
     {
         //constructor
@@ -12,6 +14,7 @@ public class PUPIL
         fName = "";
         sName = "";
         PupilMark = 0;
+        maxDataPosition = 0;
 
     }      
     //file handling store details from fie
@@ -40,7 +43,16 @@ public class PUPIL
     public int getPupilMark ()
     {
         return topmark;
-    }    
+    }   
+
     public void displayDetails ()
     {
+
+        System.out.print("Pupil: " + fName + " " + sName);
+        System.out.print(",  PupilMark is " + PupilMark);
+        System.out.println();
+
+    }
+}
+
         

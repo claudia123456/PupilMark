@@ -6,5 +6,5 @@ comment1.target=void\ processPupils()
 comment2.params=
 comment2.target=void\ setupPupilList()
 comment3.params=
-comment3.target=void\ countPupilMark()
+comment3.target=void\ findmaxData()
 numComments=4

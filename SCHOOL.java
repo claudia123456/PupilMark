@@ -17,9 +17,9 @@ public class SCHOOL
 
     // top level algorithm
     public void processPupils() throws IOException
-    {
+    { 
         setupPupilList();
-        countPupilMark();
+        findmaxData ();
       
         
 
@@ -30,23 +30,23 @@ public class SCHOOL
         System.out.println("School : PupilMark update");
         System.out.println("** Preparing to read data file.");
         String [] dataRows = PupilMark.readCSVtable ();
-        noOfPupils = dataRows.length -1;
+        noOfPupils = dataRows.length ;
         System.out.println("** " + noOfPupils + "rows read .\n\n");
         pupilList = new PUPIL [noOfPupils];
 
         for (int i = 0; i < noOfPupils; i++) {
             pupilList[i] = new PUPIL ();
-            pupilList[i].readPupilDetails(dataRows[i+1]);
+            pupilList[i].readPupilDetails(dataRows[i]);
         }
     }
 
-    public void countPupilMark() throws IOException
-    {
+    public void findmaxData ()    {
         //placeholder
+        int maxDataPosition = 0;
         for (int i = 0; i < noOfPupils; i++)
         {
-            if (pupilList [i].getPupilMark() < pupilList [maxDataPosition].getPupilMark ()) {
-                maxDataPosition = 1;
+            if (pupilList [i].getPupilMark() > pupilList [maxDataPosition].getPupilMark ()) {
+                maxDataPosition = i;
             }
         }
            

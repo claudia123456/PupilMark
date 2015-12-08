@@ -8,20 +8,20 @@ public class SCHOOL
     // number of pupils to be called 
     int noOfPupils;
     FILEREADCSV PupilMark;
+    FILEWRITECSV resultFile;
+    private int topmark;
 
     public SCHOOL()
     {
         PupilMark = new FILEREADCSV();
+        resultFile = new FILEWRITECSV();
 
     }
-
     // top level algorithm
     public void processPupils() throws IOException
     { 
         setupPupilList();
         findmaxData ();
-      
-        
 
     }
 
@@ -40,18 +40,31 @@ public class SCHOOL
         }
     }
 
-    public void findmaxData ()    {
+    public void findmaxData ()    throws IOException 
+    {
         //placeholder
         int maxDataPosition = 0;
+        String FileContent = "";
+
         for (int i = 0; i < noOfPupils; i++)
         {
             if (pupilList [i].getPupilMark() > pupilList [maxDataPosition].getPupilMark ()) {
                 maxDataPosition = i;
             }
-        }
-           
+            if (maxDataPosition>1)
+            {
+                FileContent = FileContent.concat("\n");
+
+            }
+            FileContent = FileContent.concat(pupilList[1].writeDetails());
+
             System.out.print("topmark is:" + maxDataPosition);
             pupilList[maxDataPosition].displayDetails();
             System.out.println();
-    }      
-        }
+
+            System.out.println ("** preparingto write data file. ");
+            resultFile.writeCSVtable(FileContent);
+            System.out.println(" File written and closed");
+        }      
+    }
+}

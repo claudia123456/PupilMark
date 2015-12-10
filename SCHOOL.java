@@ -46,9 +46,9 @@ public class SCHOOL
         int maxDataPosition = 0;
         String FileContent = "";
 
-        for (int i = 0; i < noOfPupils; i++)
+        for (int i = 1; i < noOfPupils; i++)
         {
-            if (pupilList [i].getPupilMark() > pupilList [maxDataPosition].getPupilMark ()) {
+            if (pupilList [i].getPupilMark() < pupilList [maxDataPosition].getPupilMark ()) {
                 maxDataPosition = i;
             }
             if (maxDataPosition>1)
@@ -56,7 +56,8 @@ public class SCHOOL
                 FileContent = FileContent.concat("\n");
 
             }
-            FileContent = FileContent.concat(pupilList[1].writeDetails());
+        }    
+          FileContent = FileContent.concat(pupilList[maxDataPosition].writeDetails());
 
             System.out.print("topmark is:" + maxDataPosition);
             pupilList[maxDataPosition].displayDetails();
@@ -65,6 +66,6 @@ public class SCHOOL
             System.out.println ("** preparingto write data file. ");
             resultFile.writeCSVtable(FileContent);
             System.out.println(" File written and closed");
-        }      
     }
+    
 }

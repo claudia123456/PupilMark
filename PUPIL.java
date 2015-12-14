@@ -42,7 +42,7 @@ public class PUPIL
 
     public int getPupilMark ()
     {
-        return topmark;
+        return PupilMark;
     }   
 
     public void displayDetails ()

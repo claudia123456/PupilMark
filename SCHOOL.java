@@ -48,7 +48,7 @@ public class SCHOOL
 
         for (int i = 1; i < noOfPupils; i++)
         {
-            if (pupilList [i].getPupilMark() < pupilList [maxDataPosition].getPupilMark ()) {
+            if (pupilList [i].getPupilMark() > pupilList [maxDataPosition].getPupilMark ()) {
                 maxDataPosition = i;
             }
             if (maxDataPosition>1)

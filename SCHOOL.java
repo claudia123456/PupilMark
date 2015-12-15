@@ -63,7 +63,7 @@ public class SCHOOL
             pupilList[maxDataPosition].displayDetails();
             System.out.println();
 
-            System.out.println ("** preparingto write data file. ");
+            System.out.println ("** preparing to write data file. ");
             resultFile.writeCSVtable(FileContent);
             System.out.println(" File written and closed");
     }
